@@ -1,0 +1,24 @@
+name: Bug 报告
+description: 某个操作没有按预期工作。
+labels: [bug]
+body:
+  - type: dropdown
+    id: page
+    attributes:
+      label: 哪个页面
+      options: [主页, 生日快乐, 浪花儿, 本地构建]
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 写清点了哪里、看到什么、希望出现什么。可以附不含私人内容的截图。
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 手机 / 电脑与浏览器版本
+    validations:
+      required: true

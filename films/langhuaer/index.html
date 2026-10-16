@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#ffffff"><meta name="description" content="《浪花儿》相册与海报。"><title>浪花儿 · 回南天</title><link rel="icon" href="data:,"><link rel="stylesheet" href="./style.css"><script defer src="./app.js"></script></head>
+<body>
+<header class="masthead"><a class="wordmark" href="https://poster.southwardfilm.cn/" aria-label="回南天海报主站"><img src="./assets/southward-logo.png" alt="回南天 SOUTHWARD"></a></header>
+<main>
+<section class="album" aria-label="浪花儿宣传物料相册">
+<h1><img src="./assets/film-title-orange.png" alt="浪花儿"></h1>
+<div class="album-track" id="album-track" tabindex="0" role="region" aria-label="海报与影像长廊"></div>
+</section>
+<section class="workspace" id="editor" aria-label="海报生成器"><div class="editor-grid">
+<div class="controls">
+<section class="control-group photo-group"><label for="photo">照片</label><label class="upload" id="dropzone" for="photo"><svg viewBox="0 0 24 24"><path d="M12 16V4m-5 5 5-5 5 5M4 16v4h16v-4"/></svg><span id="upload-label">选择照片</span><input id="photo" type="file" accept="image/jpeg,image/png,image/webp"></label><div class="zoom-row"><label for="zoom">缩放</label><output id="zoom-value" for="zoom">100%</output></div><input id="zoom" type="range" min="1" max="3" step="0.01" value="1" disabled><div class="photo-tools"><button id="center" disabled>居中</button></div></section>
+<section class="control-group director-group"><label for="director">导演</label><input id="director" type="text" value="齐炎炎" maxlength="16" autocomplete="off"><label class="english-label" for="director-en">Director</label><input id="director-en" type="text" value="Yanyan QI" maxlength="32" autocomplete="off" lang="en" spellcheck="false"></section>
+<section class="control-group export-group"><button id="download" class="primary" disabled>载入中</button><button id="reset" class="reset">恢复默认</button><p id="status" class="status" role="status" aria-live="polite"></p></section>
+</div>
+<section class="preview" aria-label="海报实时预览"><div class="preview-top"><h2>海报预览</h2><button id="enlarge" aria-label="放大预览" disabled><svg viewBox="0 0 24 24"><path d="M9 3H3v6m12-6h6v6M3 15v6h6m6 0h6v-6"/></svg></button></div><div class="poster-wrap" id="poster-wrap"><canvas id="poster" width="886" height="1329" role="img" aria-label="浪花儿海报" hidden></canvas><div id="photo-area" class="photo-area" tabindex="0" aria-label="照片位置" role="group" hidden></div><button id="empty-photo" class="empty-photo" aria-label="选择预览照片"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div id="loading" class="loading" hidden>载入中</div></div></section>
+</div></section>
+</main>
+<dialog id="save-dialog" class="save-dialog"><div class="save-header"><span>浪花儿</span><button id="save-close" aria-label="关闭预览">关闭</button></div><img id="save-image" alt="浪花儿高清海报"><button id="save-file" class="primary">下载图片</button></dialog>
+</body></html>

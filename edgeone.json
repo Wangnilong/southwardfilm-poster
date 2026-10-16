@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {"source": "/birthday", "destination": "/birthday/", "statusCode": 301},
+    {"source": "/langhuaer", "destination": "/langhuaer/", "statusCode": 301},
+    {"source": "/langhua", "destination": "/langhuaer/", "statusCode": 301},
+    {"source": "/langhua/", "destination": "/langhuaer/", "statusCode": 301},
+    {"source": "/langhua/*", "destination": "/langhuaer/:splat", "statusCode": 301}
+  ]
+}

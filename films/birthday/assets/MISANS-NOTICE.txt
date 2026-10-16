@@ -1,0 +1,4 @@
+This website uses MiSans fonts.
+Copyright © 2020-2025 Beijing Xiaomi Mobile Software Co.,Ltd. All Rights Reserved.
+Source: the user-provided MiSans.zip.
+License: MISANS-LICENSE.pdf

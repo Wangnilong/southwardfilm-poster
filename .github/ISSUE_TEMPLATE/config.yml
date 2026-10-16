@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 先看设计说明
+    url: https://github.com/Wangnilong/southwardfilm-poster/blob/main/docs/DESIGN.md
+    about: 已确定的视觉方向、页面结构和暂不实现的内容。

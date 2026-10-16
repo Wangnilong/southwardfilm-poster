@@ -1,0 +1,16 @@
+[
+  {
+    "id": "birthday",
+    "title": "生日快乐",
+    "description": "写一句祝福，换一张照片。",
+    "url": "/birthday/",
+    "cover": "./assets/birthday.jpg"
+  },
+  {
+    "id": "langhuaer",
+    "title": "浪花儿",
+    "description": "相册与海报。",
+    "url": "/langhuaer/",
+    "cover": "./assets/langhua.jpg"
+  }
+]

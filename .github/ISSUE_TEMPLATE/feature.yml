@@ -1,0 +1,24 @@
+name: 功能或模板建议
+description: 说说你想解决的使用场景。
+labels: [enhancement]
+body:
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 使用场景与当前问题
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 你的想法
+      description: 涉及新模板时，说明素材来源；涉及大幅改版时，先说明与现有设计的关系。
+    validations:
+      required: true
+  - type: checkboxes
+    id: help
+    attributes:
+      label: 你愿意怎样一起做
+      options:
+        - label: 我可以尝试实现。
+        - label: 我可以协助测试或补充设计。

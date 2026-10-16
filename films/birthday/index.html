@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="修改文字、替换照片，下载你的生日海报。">
+  <meta name="theme-color" content="#ffffff">
+  <title>海报生成器 · 回南天</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="masthead"><div class="nav-inner"><a class="wordmark" href="https://poster.southwardfilm.cn/" aria-label="回南天海报主站"><img src="./assets/southward-logo.png" alt="回南天 SOUTHWARD" width="1981" height="572"></a></div></header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">给生活一张生日海报。</h1>
+      <div class="poster-stage" id="poster-stage" tabindex="0" role="img" aria-label="生日快乐电影海报，移动鼠标或按住拖动可倾斜，方向键也可调整">
+        <div class="paper-stack" aria-hidden="true"></div>
+        <div class="showcase-poster poster-left"><img src="./assets/film-poster-candle.jpg" alt="生日快乐电影海报：女孩和生日蜡烛" width="2160" height="3229" draggable="false"></div>
+        <div class="showcase-poster poster-right"><img src="./assets/film-poster-shoes.jpg" alt="生日快乐电影海报：街灯下的红袜和银色鞋子" width="2160" height="3229" draggable="false"></div>
+        <svg class="doodle doodle-star" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="m50 5 9 32 34-8-27 25 20 31-35-17-24 27 4-39L7 41l33-2 10-34Zm0 0-7 59 43 21-59-31 32-17" stroke="#e79cbe" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="doodle doodle-loop" viewBox="0 0 180 110" fill="none" aria-hidden="true"><path d="M8 80c40-70 85-63 78-24-8 43-51 4-28-23 28-33 65-2 91 33m-27-1 31 7-1-29" stroke="#282623" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="doodle doodle-spark" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="m47 7 7 81M9 49l80-2M20 16l64 65M19 82l65-66m-35 8 2 53M26 48l49 4" stroke="#e4c947" stroke-width="4" stroke-linecap="round"/></svg>
+      </div>
+      <p class="gesture-hint">移动鼠标，或按住海报轻轻拖动。</p>
+      <svg class="bottom-doodle" viewBox="0 0 320 70" fill="none" aria-hidden="true"><path d="M8 27c35 18 66 17 98 3s57-23 67-8c12 18-19 35-19 12 0-30 21-18 20-9-2 23 17 22 54 3s61-21 83-9M153 21c-13-16-26-1-1 18 30-25 17-33 1-18" stroke="#282623" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </section>
+    <section class="workspace" id="editor" aria-labelledby="editor-title">
+      <div class="workspace-heading"><h2 id="editor-title">制作你的海报<svg class="heading-doodle" viewBox="0 0 110 60" fill="none" aria-hidden="true"><path d="m23 3 3 43M3 24l45 2M8 8l33 31M8 41 42 6m33 14 5 26m-20-14 34-3M66 20l23 23m-22 1 22-24" stroke="#e4c947" stroke-width="3" stroke-linecap="round"/></svg></h2><p>修改文字，拖入照片，调整取景，然后下载。</p></div>
+      <div class="editor-grid">
+        <section class="controls" aria-label="海报编辑">
+          <svg class="tool-doodle tool-doodle-arrow" viewBox="0 0 90 100" fill="none" aria-hidden="true"><path d="M56 4C18 5 18 42 41 43c37 0 36 31 3 41m-4-16-7 24 24-1" stroke="#e79cbe" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="step">
+            <label for="title"><span class="number">1</span>生日祝福</label>
+            <input id="title" type="text" value="回南天见" maxlength="16" placeholder="输入文字" autocomplete="off">
+            <p class="hint">建议 2—6 个字。长文字会自动缩小。</p>
+            <label class="director-label" for="director">导演名字 · 中文</label>
+            <input id="director" type="text" value="萨拉·戈赫尔" maxlength="24" placeholder="输入你的名字" autocomplete="off">
+            <label class="director-label english-label" for="director-en">导演名字 · 英文</label>
+            <input id="director-en" type="text" value="SARAH GOHER" maxlength="48" placeholder="输入英文名字" autocomplete="off" spellcheck="false" lang="en">
+            <p class="hint">署名使用 <a href="./assets/MISANS-LICENSE.pdf" target="_blank" rel="noopener">MiSans 字体</a>。</p>
+          </div>
+          <div class="step">
+            <label for="photo"><span class="number">2</span>登场嘉宾</label>
+            <label class="upload" id="dropzone" for="photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v3A1.5 1.5 0 0 0 4.5 21h15a1.5 1.5 0 0 0 1.5-1.5v-3M7.5 7.5 12 3l4.5 4.5M12 3v13.5"/></svg>
+              <strong id="upload-label">拖入照片，或点击选择</strong><span>支持 JPG、PNG、WebP</span>
+              <input id="photo" type="file" accept="image/jpeg,image/png,image/webp">
+            </label>
+            <div class="zoom-row"><label for="zoom">照片缩放</label><output id="zoom-value" for="zoom">100%</output></div>
+            <input id="zoom" type="range" min="1" max="3" value="1" step="0.01" aria-label="照片缩放">
+            <div class="photo-tools"><span class="desktop-help">拖动海报中的照片，调整取景。</span><span class="touch-help">单指移动，两指缩放照片。</span><button id="center" type="button">居中</button></div>
+          </div>
+          <div class="step export-step">
+            <label for="format"><span class="number">3</span>打印惊喜</label>
+            <div class="export-options"><select id="format" aria-label="下载格式"><option value="png">PNG · 高清原图</option><option value="jpeg">JPG · 方便分享</option></select><span>2000 × 2990</span></div>
+            <button id="download" class="primary" type="button" disabled>正在载入…</button>
+            <button id="reset" class="reset" type="button">恢复默认</button>
+          </div>
+          <p id="status" class="status" role="status" aria-live="polite">正在载入…</p>
+        </section>
+        <section class="preview" aria-label="海报实时预览">
+          <div class="preview-top">海报预览<svg class="preview-doodle" viewBox="0 0 100 40" fill="none" aria-hidden="true"><path d="M6 23c10-21 24-24 31-8-3 19-16 10-13-1M41 23c10-21 24-24 31-8-3 19-16 10-13-1M75 26l16 1" stroke="#aaa994" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+          <div class="poster-wrap" id="poster-wrap"><canvas id="poster" width="1000" height="1495" role="img" aria-label="海报实时预览"></canvas><div id="photo-area" class="photo-area" tabindex="0" role="group" aria-label="照片编辑区域：拖动移动照片，两指缩放，方向键微调位置"><div id="drop-hint" class="drop-hint">松开，替换照片</div></div><div id="loading" class="loading">正在载入…</div></div>
+          <svg class="preview-foot-doodle" viewBox="0 0 260 65" fill="none" aria-hidden="true"><path d="M6 26c19 13 49 17 67 4m-50-20 4 6m30-7-4 7m53 5c12-26 35-18 13 5-12 15-24 6-13-5m50 5 4-23 10 19 23-5-17 17 7 20-25-10-15 16 3-26-19-11 29 3m48 1 4 24m-14-11 26-3" stroke="#e79cbe" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </section>
+      </div>
+    </section>
+  </main>
+  <dialog id="save-dialog" class="save-dialog" aria-labelledby="save-title">
+    <div class="save-header"><h2 id="save-title">惊喜做好了</h2><button id="save-close" type="button" autofocus>关闭</button></div>
+    <p id="save-help">长按下面的高清图片，在菜单里选择保存图片。</p>
+    <div class="save-actions"><button id="save-share" class="primary" type="button" hidden>分享 / 保存</button><button id="save-file" type="button">下载图片</button></div>
+    <img id="save-image" alt="你的高清生日海报，可长按保存" draggable="false">
+  </dialog>
+</body>
+</html>
