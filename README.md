@@ -54,6 +54,8 @@ Windows、macOS、Linux 使用相同命令；运行和构建不需要 Python、P
 
 贡献方式见 [CONTRIBUTING.md](CONTRIBUTING.md)。**现有视觉设计已经确定；修功能、调布局时请保留配色、字体和文件夹外观。** 大幅改版先在 Issue 里确认方向。
 
+想邀请朋友一起做，可以使用这份[项目介绍与招募文案](docs/INVITATION.md)。
+
 ## 从哪里改
 
 ```text
