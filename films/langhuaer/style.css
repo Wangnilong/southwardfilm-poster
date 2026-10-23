@@ -12,13 +12,13 @@
 @media(max-width:1050px){.album-page.album-photo{flex-basis:500px}.album-page.album-photo img{height:270px}}
 @media(max-width:760px){.album-page.album-photo{flex-basis:88vw;padding:7px 7px 16px}.album-page.album-photo img{height:calc((88vw - 14px)*.5625)}}
 
-/* Match Birthday's existing header, showcase rhythm and workbench edges. */
+/* Preserve Birthday's header and workbench edges; keep the album tail compact. */
 .masthead{max-width:1180px;padding:28px 40px 20px;min-height:88px}
 .wordmark img{width:160px}
-.album{--showcase-top:65px;--showcase-bottom:78px;--showcase-title:clamp(42px,6.48vw,91.2px);--showcase-gap:42px;--showcase-stage:550px;--showcase-tail:113.8px;position:relative;overflow:visible;padding:var(--showcase-top) 0 var(--showcase-bottom);min-height:calc(var(--showcase-top) + var(--showcase-title) + var(--showcase-gap) + var(--showcase-stage) + var(--showcase-tail) + var(--showcase-bottom))}
+.album{--showcase-top:65px;--showcase-bottom:78px;--showcase-title:clamp(42px,6.48vw,91.2px);--showcase-gap:42px;--showcase-stage:550px;--showcase-tail:33.8px;position:relative;overflow:visible;padding:var(--showcase-top) 0 var(--showcase-bottom);min-height:calc(var(--showcase-top) + var(--showcase-title) + var(--showcase-gap) + var(--showcase-stage) + var(--showcase-tail) + var(--showcase-bottom))}
 .album h1{height:var(--showcase-title);margin:0 auto var(--showcase-gap);display:flex;align-items:center;justify-content:center}
 .album-track{height:var(--showcase-stage);overflow-y:hidden}
-.scroll-cue{position:absolute;z-index:2;left:50%;bottom:-24px;display:grid;place-items:center;width:88px;height:112px;transform:translateX(-50%);color:#51514d;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.scroll-cue{position:absolute;z-index:2;left:50%;bottom:16px;display:grid;place-items:center;width:88px;height:112px;transform:translateX(-50%);color:#51514d;text-decoration:none;-webkit-tap-highlight-color:transparent}
 .scroll-cue svg{width:76px;height:100px;fill:currentColor;stroke:none;overflow:visible;animation:scroll-cue-drift 2.4s ease-in-out infinite;transition:color .2s}
 .scroll-cue:hover{color:var(--accent)}
 .scroll-cue:hover svg{animation-play-state:paused}
@@ -29,20 +29,20 @@
 @media(max-width:800px){
   .masthead{padding:22px 25px 16px;min-height:78px}
   .wordmark img{width:145px}
-  .album{--showcase-top:52px;--showcase-bottom:54px;--showcase-title:clamp(34.8px,6.24vw,55.2px);--showcase-gap:34px;--showcase-stage:430px;--showcase-tail:98.8px}
+  .album{--showcase-top:52px;--showcase-bottom:54px;--showcase-title:clamp(34.8px,6.24vw,55.2px);--showcase-gap:34px;--showcase-stage:430px;--showcase-tail:34px}
   .album h1{width:155px}
   .album-track{gap:25px;padding:25px 33px 43px}
   .album-page{flex-basis:calc((var(--showcase-stage) - 68px)*2/3)}
   .album-page img{height:calc(var(--showcase-stage) - 68px)}
   .album-page.album-photo{flex-basis:min(88vw,500px);padding:7px 7px 16px}
   .album-page.album-photo img{height:calc((min(88vw,500px) - 14px)*.5625)}
-  .scroll-cue{bottom:-23px;width:74px;height:94px}
+  .scroll-cue{bottom:12px;width:74px;height:94px}
   .scroll-cue svg{width:64px;height:86px}
   .workspace{padding:55px 25px 70px}
   .editor-grid{display:flex;flex-direction:column;max-width:500px;gap:45px}
   .preview{order:0;width:100%}
   .controls{order:1;width:100%}
 }
-@media(max-width:520px){.album{--showcase-top:44px;--showcase-title:clamp(32.4px,7.8vw,42px);--showcase-stage:306px;--showcase-tail:88px}}
+@media(max-width:520px){.album{--showcase-top:44px;--showcase-title:clamp(32.4px,7.8vw,42px);--showcase-stage:306px;--showcase-tail:48px}}
 @media(max-width:360px){.album{--showcase-title:30px}}
 @media(prefers-reduced-motion:reduce){.scroll-cue svg{animation:none}}
