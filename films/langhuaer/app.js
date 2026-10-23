@@ -29,7 +29,7 @@ for(const section of $$('.control-group,.preview')){section.classList.add('revea
 
 const canvas=$('#poster'),ctx=canvas.getContext('2d'),W=886,H=1329;
 const images=new Map();let ready=false,sourceImage=null,objectURL=null,photoDrag=null,renderFrame=0;
-const state={director:'齐炎炎',english:'Yanyan QI',zoom:1,x:0,y:0};
+const state={director:'齐炎焱',english:'Yanyan QI',zoom:1,x:0,y:0};
 async function load(name){if(images.has(name))return images.get(name);const image=new Image();image.src=`./assets/${name}`;await image.decode();images.set(name,image);return image;}
 function say(message){$('#status').textContent=message;}
 function drawFit(value,x,y,width,size,font,color){ctx.font=`${size}px ${font}`;while(ctx.measureText(value).width>width&&size>10){size--;ctx.font=`${size}px ${font}`;}ctx.fillStyle=color;ctx.textAlign='left';ctx.textBaseline='alphabetic';ctx.fillText(value,x,y);}
@@ -55,7 +55,7 @@ area.addEventListener('pointermove',e=>{if(!sourceImage||!pointers.has(e.pointer
 function endPhoto(e){pointers.delete(e.pointerId);pinchStart=null;photoDrag=null;if(pointers.size===1){const p=[...pointers.values()][0];photoDrag={x:p.x,y:p.y,ox:state.x,oy:state.y};}if(!pointers.size)area.classList.remove('dragging');}
 area.addEventListener('pointerup',endPhoto);area.addEventListener('pointercancel',endPhoto);
 area.addEventListener('keydown',e=>{if(!sourceImage||!['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();state.x+=e.key==='ArrowRight'?10:e.key==='ArrowLeft'?-10:0;state.y+=e.key==='ArrowDown'?10:e.key==='ArrowUp'?-10:0;schedule();});
-$('#reset').addEventListener('click',()=>{state.director='齐炎炎';state.english='Yanyan QI';state.x=state.y=0;state.zoom=1;sync();render();say('');});
+$('#reset').addEventListener('click',()=>{state.director='齐炎焱';state.english='Yanyan QI';state.x=state.y=0;state.zoom=1;sync();render();say('');});
 function showPreview(){if(!ready||!sourceImage)return;render();$('#save-image').src=canvas.toDataURL('image/png');$('#save-dialog').showModal();}
 async function download(){if(!ready||!sourceImage)return;try{render();const blob=await new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(new Error('export failed')),'image/png'));const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='浪花儿海报.png';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);say('已导出 886 × 1329 PNG');}catch{say('导出失败。');}}
 $('#download').addEventListener('click',()=>{if(matchMedia('(max-width:760px)').matches)showPreview();else download();});$('#save-file').addEventListener('click',download);$('#enlarge').addEventListener('click',showPreview);$('#save-close').addEventListener('click',()=>$('#save-dialog').close());
